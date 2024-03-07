@@ -89,7 +89,6 @@ public class PauseScript : MonoBehaviour
                 _angle += _angleReset;
             }
         }
-        Debug.LogWarning(_angle);
         if(Input.GetKeyDown(KeyCode.JoystickButton7) || Input.GetKeyDown(KeyCode.Escape))
         {
             IsPause = true;

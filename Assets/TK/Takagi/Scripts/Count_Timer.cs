@@ -58,11 +58,9 @@ public class Count_Timer : MonoBehaviour
 
     void Update()
     {
-        print("1");
         // 制限時間が0秒になるまで実行
         if (_countdownSeconds >= 0f)
         {
-            print("2");
 
             if (!_pauseScript.IsPause)
             {
@@ -74,7 +72,6 @@ public class Count_Timer : MonoBehaviour
         // 値が変わった時、テキストUIを都度更新
         if ((int)_countdownSeconds != (int)_oldSeconds)
         {
-            print("3");
 
             // 秒数の表示
             _timeText.text = ((int)_countdownSeconds).ToString("000");
@@ -86,10 +83,6 @@ public class Count_Timer : MonoBehaviour
         // 秒数が0秒になるまで実行
         if (_countdownSeconds <= 0f)
         {
-            print("4");
-
-            Debug.Log("制限時間終了");
-
             TimerEnd = true;
         }
 

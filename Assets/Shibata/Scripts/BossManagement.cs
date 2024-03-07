@@ -62,8 +62,6 @@ public class BossManagement : MonoBehaviour
 
     public void Beginning()
     {
-        print("begininng");
-        Debug.Log(_enemys);
         _isReset = true;
         _destroyObj.SetActive(false);
         _bossMoving.Reseting();
@@ -86,7 +84,6 @@ public class BossManagement : MonoBehaviour
             case 1:
                 if (_isMove == false && _isDamage == false)// && _isReset == true
                 {
-                    print("1‚Â–Ú‚Ì“®‚«");
                     _isMove = true;
                     _bossMoving.Increase();
                     Invoke("StartMove", 5);
@@ -95,7 +92,6 @@ public class BossManagement : MonoBehaviour
             case 2:
                 if (_isMove == false && _isDamage == false)// && _isReset == true
                 {
-                    print("2‚Â–Ú‚Ì“®‚«");
                     _isMove = true;
                     _bossMoving.Dash();
                     Invoke("StartMove", 5);
@@ -104,7 +100,6 @@ public class BossManagement : MonoBehaviour
             case 3:
                 if (_isMove == false && _isDamage == false)// && _isReset == true
                 {
-                    print("3‚Â–Ú‚Ì“®‚«");
                     _isMove = true;
                     _bossMoving.Increase();
                     Invoke("StartMove", 5);
@@ -113,7 +108,6 @@ public class BossManagement : MonoBehaviour
             case 4:
                 if (_isMove == false && _isDamage == false)// && _isReset == true
                 {
-                    print("4‚Â–Ú‚Ì“®‚«");
                     _isMove = true;
                     _bossMoving.Dash();
                     Invoke("StartMove", 5);
@@ -132,10 +126,8 @@ public class BossManagement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision2D)
     {
-        Debug.Log("OnCollisionEnter");
         if (collision2D.gameObject.tag == "Player" && _bash.IsBash == true)//_Bash._isBash == true
         {
-            Debug.Log("OnCollisionEnter2D");
             _isDamage = true;
             _isReset = false;
             _deadCount = _deadCount - 1;

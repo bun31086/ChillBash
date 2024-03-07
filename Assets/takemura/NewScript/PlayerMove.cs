@@ -166,17 +166,16 @@ public class PlayerMove : MonoBehaviour
         //着地中のとき
         if (IsGround)
         {
+            print("A");
             //アニメーション
             _animator.SetBool("isFall", false);
         }
         //落下中のとき
         if (_playerRigid.velocity.y < 0)
         {
+            print("B");
             //下への重力を強める
-            _playerRigid.AddForce(new Vector2(0, -400 * Time.deltaTime));
-        }
-        if (_playerRigid.velocity.y < 0)
-        {
+            //_playerRigid.AddForce(new Vector2(0, -400 * Time.deltaTime));
             //アニメーション
             _animator.SetBool("isJump", false);
             _animator.SetBool("isFall", true);
@@ -255,6 +254,7 @@ public class PlayerMove : MonoBehaviour
         //アニメーション
         if (_playerRigid.velocity.x != 0 && _isGround)
         {
+            print("C");
             _animator.SetBool("isWalk", true);
         }
         else
